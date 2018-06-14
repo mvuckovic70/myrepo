@@ -132,5 +132,3 @@ for key, emb in image_id_emb.items():
             print("\t{}: duplicate {}%".format(data['filename'][r], (1 - dist/125)*100))
 
 rtree_idx
-
-
