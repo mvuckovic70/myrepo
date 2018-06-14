@@ -1,1 +1,38 @@
-Myrepo readme file
+--------------------------
+Find image duplicates POC
+--------------------------
+
+Setup
+
+​ Data type: unstructured
+​ Database: mongoDO
+​ Data size: 34 TB (200 millions of images, each 150 kb)
+​ Find at least 98% duplicates among all images
+​ Match accuracy at least 98% each
+​ Resource-efficiency, implementation & crash control
+​ Algorithm capable of running on 20 millions of images
+​ 30.000 new images added weekly and algorithm re-run
+​ Duplicate: identical one or projection (resized, cropped, watermarked, type changed)
+
+Solution - setup & prerequisites
+
+​ OS: Linux Xenial Ubuntu 16.04 64-bit
+​ Main programming language: Python 3.6
+​ Environment: Keras with Tensorflow backend
+​ Database: mongoDB with gridFS
+
+Solution - steps
+
+​ Preprocessing: converting images to arrays (one spot activity)
+​ Total dataset with arrays reduced in size to few hundreds of MB
+​ Use pre-trained imagenet Keras model Inception ResNetV2 for similarity calculation and image embedding
+​ Use rtree library to do the spatial clustering
+​ Implement similarity fn to spatial indexing clusters
+​ Setting accyracy threshold
+​ Calculate similarity as mae, converting to probability metrics
+
+Additional research
+
+​ Using t-SNE to additionally reduce dimensionality during the taining process in fully connected layer (testing)
+​ https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding
+​ Inception ResNet V2: https://ai.googleblog.com/2016/08/improving-inception-and-image.html
