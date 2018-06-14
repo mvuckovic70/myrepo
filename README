@@ -25,7 +25,7 @@ Solution - steps
 
 - Preprocessing: converting images to arrays (one spot activity)
 - Total dataset with arrays reduced in size to few hundreds of MB
-- Use pre-trained imagenet Keras model Inception ResNetV2 for similarity calculation and image embedding
+- Inception ResNetV2 in Keras for similarity calculation and image embedding
 - Use rtree library to do the spatial clustering
 - Implement similarity fn to spatial indexing clusters
 - Setting accyracy threshold
@@ -33,6 +33,6 @@ Solution - steps
 
 Additional research
 
-- Using t-SNE to additionally reduce dimensionality during the taining process in fully connected layer (testing)
+- Using t-SNE to additionally reduce dimensionality during the training process in fully connected layer (testing)
 - https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding
 - Inception ResNet V2: https://ai.googleblog.com/2016/08/improving-inception-and-image.html
